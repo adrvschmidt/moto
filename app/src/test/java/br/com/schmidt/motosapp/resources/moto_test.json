@@ -1,0 +1,36 @@
+{
+  "boolean": true,
+  "model": "GS",
+  "brand": "BMW",
+  "year": 2021,
+  "motor": {
+    "torque": "url1",
+    "power": "url2",
+    "cilindradas": "url3",
+    "tipo": "extras",
+    "quant_oleo": "url1",
+    "transmissao": "url2",
+    "combustivel": "url3",
+    "compressao": "extras"
+  },
+  "extras": {
+    "extra1": "url1",
+    "extra2": "url2"
+  },
+  "dimensoes": {
+    "comprimento": "url1",
+    "largura": "url2",
+    "altura": "url3",
+    "altura_solo": "extras",
+    "altura_assento": "url1",
+    "peso": "url2"
+  },
+    "pneus": {
+    "medida_dianteiro": "url1",
+    "medida_traseiro": "url2"
+  },
+  "firstImage": "url1",
+  "secondImage": "url2",
+  "thirdImage": "url3",
+  "capacidade_tanque": "17L"
+}
