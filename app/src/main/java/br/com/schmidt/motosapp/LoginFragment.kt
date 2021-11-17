@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
 import br.com.schmidt.motosapp.databinding.ActivityMainBinding
 import br.com.schmidt.motosapp.databinding.FragmentLoginBinding
 
@@ -18,9 +20,19 @@ class LoginFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val navHostFragment =
+            requireActivity().supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
+        val navController = navHostFragment.navController
+        val action =
+            LoginFragmentDirections.actionLoginFragmentToDetailsFragment()
+        navController.navigate(action)
     }
 
     override fun onDestroy() {

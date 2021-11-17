@@ -10,11 +10,11 @@ data class Moto(
     val firstImage: String,
     val secondImage: String?,
     val thirdImage: String?,
-    val extras: Extras,
+    private val extras: Extras,
     val capacidade_tanque: String,
-    val motor: Motor,
-    val dimensoes: Dimension,
-    val pneus: Pneu
+    private val motor: Motor,
+    private val dimensoes: Dimension,
+    private val pneus: Pneu
 ): Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString()!!,
@@ -57,5 +57,9 @@ data class Moto(
         override fun newArray(size: Int): Array<Moto?> {
             return arrayOfNulls(size)
         }
+    }
+
+    fun getAllImages():Array<String>{
+        return extras.getAllImages()
     }
 }

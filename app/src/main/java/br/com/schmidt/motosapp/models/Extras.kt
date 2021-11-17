@@ -37,4 +37,21 @@ data class Extras(
             return arrayOfNulls(size)
         }
     }
+
+    fun getAllImages(): Array<String>{
+        val array = emptyArray<String>()
+        if(extra1 != null) {
+            array[0] = extra1
+        }
+        if(extra2 != null) {
+            array[1] = extra2
+        }
+        if(extra3 != null) {
+            array[2] = extra3
+        }
+        if(extra4 != null) {
+            array[3] = extra4
+        }
+        return array
+    }
 }

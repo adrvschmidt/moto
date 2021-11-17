@@ -36,9 +36,9 @@ class ModelMotoTest {
       //  val inputStream: InputStream = javaClass.classLoader.getResourceAsStream("moto_test.json")
         val teste = Gson().fromJson(JSON_MOTO, Moto::class.java)
         println(teste)
-        println(teste.pneus.hasCamera)
-        println(teste.extras.extra1)
-        println(teste.extras.extra3)
+      //  println(teste.pneus.hasCamera)
+      //  println(teste.extras.extra1)
+      //  println(teste.extras.extra3)
      //   val teste2 = readJsonFile(inputStream.toString())
         assertEquals(4, 2 + 2)
     }
