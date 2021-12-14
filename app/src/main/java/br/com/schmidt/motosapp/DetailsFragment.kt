@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
 import br.com.schmidt.motosapp.databinding.DetailsFragmentBinding
 import com.bumptech.glide.Glide
 
@@ -23,6 +24,7 @@ class DetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = DetailsFragmentBinding.inflate(inflater, container, false)
+        binding.shimmerViewContainer.startShimmer()
         return binding.root
     }
 
@@ -31,10 +33,15 @@ class DetailsFragment : Fragment() {
         Log.d("Adriano", "Chegou aqui")
         val layoutManager = LinearLayoutManager(requireActivity())
         layoutManager.orientation = LinearLayoutManager.HORIZONTAL
+        val snapHelper = PagerSnapHelper()
         binding.recyclerview.layoutManager = layoutManager
+        snapHelper.attachToRecyclerView(binding.recyclerview)
         viewModel.getImages().observe(viewLifecycleOwner, {
             Log.d("Adriano", "Entrou aqui: ${it.size}")
             binding.recyclerview.adapter = ImageAdapter(it)
+            binding.recyclerview.addItemDecoration(LinePagerIndicatorDecoration())
+            binding.shimmerViewContainer.stopShimmer()
+            binding.shimmerViewContainer.visibility = View.GONE
         })
     }
 

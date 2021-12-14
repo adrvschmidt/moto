@@ -13,6 +13,7 @@ class DetailsViewModel : ViewModel() {
     }
 
     init {
+        Thread.sleep(1000)
         loadImages()
     }
 

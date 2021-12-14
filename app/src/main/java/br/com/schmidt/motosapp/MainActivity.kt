@@ -2,6 +2,8 @@ package br.com.schmidt.motosapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import br.com.schmidt.motosapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
